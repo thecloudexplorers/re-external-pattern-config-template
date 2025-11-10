@@ -6,17 +6,22 @@ resources:
       type: github
       name: thecloudexplorers/release-engine-core # RELEASE ENGINE REPOSITORY ###  MUST NOT  ### BE CHANGED
       endpoint: thecloudexplorers
-      ref: refs/heads/users/wcamargo/subscription-scope-tests
+      ref: refs/tags/v1.9.0
 
     - repository: pattern # REPOSITORY ALIAS ###  MUST NOT  ### BE CHANGED
       type: github
       name: thecloudexplorers/release-engine-pattern-template # CHOOSE THE DESIRED PATTERN REPOSITORY
       endpoint: thecloudexplorers
-      ref: refs/heads/users/wcamargo/subscription-scope-tests
+      ref: refs/tags/v1.5.0
 
 trigger:
   - main
   - users/*
+
+pr:
+  branches:
+    include:
+      - main
 
 pool: MSHosted-WorkloadsPool
 
